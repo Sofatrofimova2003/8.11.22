@@ -120,6 +120,28 @@ for (let elem of elems) {
 	}
 }
   
+38.1
+let arr = [1, 2, 3, 1, 3, 4];
+let set = new Set(arr);
+
+console.log(set);
+	
+38.2
+let set = new Set();
+
+set.add(1);
+set.add(2);
+set.add(3);
+
+console.log(set);
+
+38.3
+let set = new Set([1,2,3]);
+
+set.add(2);
+
+console.log(set);
+	
 39.2
 const set1 = new Set([1, 2, 3]);
 
@@ -155,6 +177,7 @@ let set = new Set([1, 2, 3]);
 let arr = [...set];
   
 let arr = Array.from(set);
+console.log(arr);
   
 41.2
 let arr = [1, 2, 3];
@@ -202,6 +225,7 @@ button.addEventListener('click', function() {
 	}
 });
 
+
 43.1
 
 let arr = [1, 2, 3, 'a', 'b', 'c'];
@@ -211,7 +235,102 @@ let arr = [1, 2, 3, 'a', 'b', 'c'];
 	"c": "ccc",
 	111: "ddd"
 }`;
+console.log(json);
+	
+43.2
+let obj = {
+	a: 1,
+	b: 2,
+	c: 'eee',
+	d: true,
+};
+let json = `{
+	"a": 1,
+	"b": 2,
+	"c": "eee",
+	"d": true
+}`;
+console.log(obj)
+console.log(json)
+	
+43.3
+let obj = {
+	a: ['a', 'b', 'c',],
+	b: '111',
+	c: 'eee',
+};
+let json = `{
+	"a": ["a", "b", "c"],
+	"b": "111",
+	"c": "eee"
+}`;
+console.log(obj)
+console.log(json)
   
 44.1
 let json = '[1,2,3,4,5]';
   let arr = JSON.parse(json);
+console.log(arr);
+	
+44.2
+const json = `{
+    "data1": [1,2,3],
+    "data2": [4,5,6],
+    "data3": [7,8,9]
+}`
+
+const arr = Object.values(JSON.parse(json))
+
+const getArraySum = (data) => data.reduce((acc, value) => acc + value, 0)
+
+const sumOfArrValues = arr.reduce((acc, value) => {
+  return acc + getArraySum(value)
+}, 0)
+
+console.log(sumOfArrValues)
+
+45.1
+let json = ['user1', 'user2', 'user3', 'user4', 'user5'];
+
+let arr = ['user1', 'user2', 'user3', 'user4', 'user5'];
+
+let json = JSON.stringify(arr);
+console.log(json);
+
+46.1
+let json = '["user1","user2","user3","user4","user5"]';
+
+let arr = JSON.parse(json);
+arr.push(user6);
+	
+let res = JSON.stringify(arr);
+console.log(res);
+	
+46.3
+let json = `[
+	{
+		"name": "user1",
+		"age": 25,
+		"salary": 1000
+	},
+	{
+		"name": "user2",
+		"age": 26,
+		"salary": 2000
+	},
+	{
+		"name": "user3",
+		"age": 27,
+		"salary": 3000
+	}
+]`;
+
+let arr = JSON.parse(json);
+arr.push(user4,
+	28,
+	4000,);
+
+let res = JSON.stringify(arr);
+console.log(res);	
+
+
